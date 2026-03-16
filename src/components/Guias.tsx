@@ -9,55 +9,48 @@ function YtIcon({ className = "" }: { className?: string }) {
   );
 }
 
-/* ── Featured creators (spotlight cards) ── */
-const featured = [
+/* ── PRINCIPAIS — spotlight cards ── */
+const principais = [
   {
-    name: "3 Elementos",
-    members: "Emilio Garcia, Carlos Ruas & Mila Massuda",
+    channel: "Inteligência Ltda",
+    desc: "Podcast & Entretenimento",
+    subs: "5.61M",
+    logo: "/guias/ltda.svg",
+    gradient: "from-[#003770] to-[#208cf1]",
+  },
+  {
+    channel: "Ponto em Comum",
+    desc: "Debates & Cultura",
+    subs: "1.12M",
+    logo: "/guias/davi.webp",
+    gradient: "from-[#f65a27] to-[#ffa300]",
+  },
+  {
     channel: "3 Elementos",
+    desc: "Emilio Garcia, Carlos Ruas & Mila Massuda",
     subs: "192K",
-    img: "/guias/elementos.webp",
-    gradient: "from-[#f65a27] to-[#f7682b]",
-  },
-  {
-    name: "Blablalogia",
-    members: "Emilio Garcia",
-    channel: "Blablalogia",
-    subs: "307K",
-    img: "/guias/blabla.webp",
-    gradient: "from-[#208cf1] to-[#1f8de8]",
-  },
-  {
-    name: "Felipe Hime",
-    members: "Astrofísico & Divulgador",
-    channel: "Felipe Hime",
-    subs: "244K",
-    img: "/guias/hime.webp",
-    gradient: "from-[#2ba2f2] to-[#1f8de8]",
+    logo: "/guias/elementos.webp",
+    gradient: "from-[#2ba2f2] to-[#4e9424]",
   },
 ];
 
-/* ── Other creators (grid) ── */
-const others = [
-  { name: "Amanda Alves Gomes", img: "/guias/amanda.webp", pos: "center" },
-  { name: "Bruno Gonçalves Augusta", img: "/guias/bruno.webp", pos: "30% 10%" },
-  { name: "Davi Calazans", img: "/guias/davi.webp", pos: "center" },
-  { name: "Bibi Bailas", img: "/guias/bailas.webp", pos: "top" },
-  { name: "Paulo Cacella", img: "/guias/paulo.webp", pos: "50% 20%" },
-  { name: "Thiago de Melo", img: "/guias/thiago.webp", pos: "center" },
-  { name: "Tupá Guerra", img: "/guias/tupa.webp", pos: "top" },
+/* ── OUTRAS — secondary grid ── */
+const outras = [
+  { channel: "Vem a mim língua russa", subs: "640K", logo: "/guias/thiago.webp" },
+  { channel: "Blablalogia", subs: "307K", logo: "/guias/blabla.svg" },
+  { channel: "Felipe Hime", subs: "244K", logo: "/guias/hime.webp" },
+  { channel: "Zoomundo", subs: "212K", logo: "/guias/zoomundo.svg" },
+  { channel: "Física e Afins", subs: "480K", logo: "/guias/bibi.svg" },
+  { channel: "Uma Tupã no Tempo", subs: "27K", logo: "/guias/tupa.svg" },
 ];
 
 export default function Guias() {
   return (
     <section id="clientes-destaque" className="bg-white py-16 sm:py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* ── Header ── */}
         <div className="mb-14 max-w-2xl">
-          <div
-            data-reveal="scale"
-            className="mb-6 flex items-center gap-3"
-          >
+          <div data-reveal="scale" className="mb-6 flex items-center gap-3">
             <span className="h-px flex-1 max-w-[60px] bg-[#4e9424]" />
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#4e9424]">
               Nossos Parceiros
@@ -76,94 +69,103 @@ export default function Guias() {
           <p
             data-reveal="up"
             style={{ transitionDelay: "0.2s" }}
-            className="mt-5 text-lg leading-relaxed text-[#111827]/50"
+            className="mt-5 text-base sm:text-lg leading-relaxed text-[#111827]/50"
           >
             Canais e personalidades que confiaram na Inclusive Travel para
             criar experiências inesquecíveis com seus públicos.
           </p>
         </div>
 
-        {/* ── Spotlight — featured channels ── */}
-        <div className="mb-6 grid gap-4 md:grid-cols-3">
-          {featured.map((f, i) => (
+        {/* ── 3M+ stat banner ── */}
+        <div
+          data-reveal="up-scale"
+          className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-br from-[#003770] to-[#208cf1] p-6 sm:p-10 text-white"
+        >
+          <div className="relative z-10 flex flex-col items-center gap-3 text-center sm:flex-row sm:gap-8 sm:text-left">
+            <span className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
+              8.8M<span className="text-[#ffa300]">+</span>
+            </span>
+            <div>
+              <p className="text-lg sm:text-xl font-bold">inscritos somados</p>
+              <p className="mt-1 text-sm text-white/60">
+                São quase 9 milhões de pessoas alcançadas pelos nossos parceiros.
+                Produzimos experiências para os maiores canais do Brasil.
+              </p>
+            </div>
+          </div>
+          <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/5 hidden sm:block" />
+          <div className="pointer-events-none absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-white/5 hidden sm:block" />
+        </div>
+
+        {/* ── Principais — 3 spotlight cards ── */}
+        <div className="mb-8 grid gap-4 md:grid-cols-3">
+          {principais.map((p, i) => (
             <div
-              key={f.channel}
+              key={p.channel}
               data-reveal="up-scale"
               style={{ transitionDelay: `${i * 0.1}s` }}
-              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${f.gradient} transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
+              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${p.gradient} transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
             >
-              {/* Photo — top portion */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              {/* Logo — hero area */}
+              <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src={f.img}
-                  alt={f.name}
+                  src={p.logo}
+                  alt={p.channel}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-                {/* Subscriber badge */}
-                <div className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 backdrop-blur-sm">
-                  <YtIcon className="h-3.5 w-3.5 text-red-500" />
-                  <span className="text-xs font-bold text-white">{f.subs}</span>
-                </div>
               </div>
 
-              {/* Info — bottom */}
+              {/* Info — bottom bar */}
               <div className="p-5">
-                <div className="flex items-center gap-2">
-                  <YtIcon className="h-4 w-4 text-white/80" />
-                  <h3 className="text-lg font-bold text-white">{f.channel}</h3>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">{p.channel}</h3>
+                    <p className="mt-0.5 text-sm text-white/50">{p.desc}</p>
+                  </div>
+                  <div className="flex items-center gap-1.5 rounded-full bg-black/30 px-3 py-1.5">
+                    <YtIcon className="h-3.5 w-3.5 text-red-500" />
+                    <span className="text-sm font-bold text-white">{p.subs}</span>
+                  </div>
                 </div>
-                <p className="mt-1.5 text-sm text-white/60">{f.members}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* ── Grid — other creators ── */}
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-          {others.map((o, i) => (
+        {/* ── Outras — secondary grid ── */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {outras.map((o, i) => (
             <div
-              key={o.name}
+              key={o.channel}
               data-reveal="scale"
-              style={{ transitionDelay: `${(i % 4) * 0.05}s` }}
-              className="group relative aspect-[3/4] overflow-hidden rounded-2xl"
+              style={{ transitionDelay: `${(i % 3) * 0.05}s` }}
+              className="group flex items-center gap-3 sm:gap-4 rounded-xl border border-[#111827]/5 bg-[#faf8f5] p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <Image
-                src={o.img}
-                alt={o.name}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                style={{ objectPosition: o.pos }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
-
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-sm font-bold text-white drop-shadow-sm">
-                  {o.name}
-                </p>
+              {/* Logo */}
+              <div className="relative h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0 overflow-hidden rounded-lg">
+                <Image
+                  src={o.logo}
+                  alt={o.channel}
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
               </div>
 
-              {/* Hover accent */}
-              <div className="absolute left-0 top-0 h-1 w-0 bg-gradient-to-r from-[#f65a27] to-[#ffa300] transition-all duration-500 group-hover:w-full" />
+              {/* Info */}
+              <div className="min-w-0">
+                <p className="text-sm sm:text-base font-bold text-[#111827] truncate">
+                  {o.channel}
+                </p>
+                <div className="mt-0.5 flex items-center gap-1">
+                  <YtIcon className="h-3 w-3 text-red-500" />
+                  <span className="text-xs text-[#111827]/40 font-medium">{o.subs}</span>
+                </div>
+              </div>
             </div>
           ))}
-        </div>
-
-        {/* ── Badge ── */}
-        <div
-          data-reveal="up"
-          className="mt-8 flex flex-wrap items-center gap-3"
-        >
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#111827] px-5 py-2.5 text-sm font-bold text-white">
-            <span className="text-[#ffa300]">743K+</span> inscritos combinados
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#111827] px-5 py-2.5 text-sm font-bold text-white">
-            <span className="text-[#208cf1]">1.000+</span> viajantes atendidos
-          </span>
         </div>
       </div>
     </section>

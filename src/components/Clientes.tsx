@@ -1,132 +1,158 @@
-const testimonials = [
+const mainPartners = [
   {
-    name: "Rafael Nascimento",
-    trip: "África do Sul, 2024",
-    initial: "R",
+    channel: "Emílio Garcia",
+    handle: "@emiliogarcia",
+    initial: "EG",
     color: "#208cf1",
-    bg: "bg-[#208cf1]",
-    quote:
-      "Pela primeira vez me senti verdadeiramente acolhido em uma viagem. A Inclusive entende o que é diversidade na prática.",
   },
   {
-    name: "Camila Souza",
-    trip: "Egito, 2023",
-    initial: "C",
+    channel: "Davi Calazans",
+    handle: "@davicalazans",
+    initial: "DC",
     color: "#f65a27",
-    bg: "bg-[#f65a27]",
-    quote:
-      "A viagem ao Egito foi uma imersão incrível. Cada detalhe do roteiro foi pensado para nos conectar com a história e a ancestralidade. Voltei transformada.",
   },
   {
-    name: "Thiago Almeida",
-    trip: "Portugal, 2024",
-    initial: "T",
+    channel: "Inteligência Limitada",
+    handle: "@inteligencialimitada",
+    initial: "IL",
+    color: "#4e9424",
+  },
+  {
+    channel: "Amanda Alves",
+    handle: "@amandaalves",
+    initial: "AA",
     color: "#2ba2f2",
-    bg: "bg-[#2ba2f2]",
-    quote:
-      "O grupo era tão diverso e acolhedor que fiz amizades para a vida toda. Portugal nunca vai ser a mesma coisa depois dessa viagem.",
+  },
+  {
+    channel: "Bruno Augusta",
+    handle: "@brunoaugusta",
+    initial: "BA",
+    color: "#ffa300",
+  },
+  {
+    channel: "Carlos Ruas",
+    handle: "@carlosruas",
+    initial: "CR",
+    color: "#003770",
   },
 ];
 
-const guides = [
-  "Emílio Garcia", "Amanda Alves", "Bruno Augusta", "Carlos Ruas",
-  "Davi Calazans", "Felipe Hime", "Bibi Bailas", "Mila Massuda",
-  "Paulo Cacella", "Thiago de Melo", "Tupã Guerra", "Pauline Kisner",
-  "João Pedro Rangel", "Marco André", "Lucas Fabrini", "Vitor Soares",
+const secondaryPartners = [
+  "Blablalogia",
+  "Felipe Hime",
+  "Bibi Bailas",
+  "Mila Massuda",
+  "Thiago de Melo",
+  "Tupã Guerra",
+  "Pauline Kisner",
+  "João Pedro Rangel",
+  "Marco André",
+  "Lucas Fabrini",
+  "Vitor Soares",
 ];
 
 export default function Clientes() {
   return (
-    <section id="clientes" className="bg-white py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="clientes" className="bg-white py-20 sm:py-24 lg:py-32">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* ── Header ── */}
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-12 sm:mb-16 max-w-3xl">
           <span
             data-reveal="scale"
-            className="mb-4 inline-block rounded-full bg-[#f65a27]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#f65a27]"
+            className="mb-4 inline-block rounded-full bg-[#208cf1]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#208cf1]"
           >
-            Depoimentos
+            Parceiros
           </span>
 
           <h2
             data-reveal="up"
             style={{ transitionDelay: "0.1s" }}
-            className="font-display text-4xl font-bold leading-tight text-[#111827] lg:text-5xl"
+            className="font-display text-3xl font-bold leading-tight text-[#111827] sm:text-4xl lg:text-5xl"
           >
-            Quem já viajou{" "}
-            <span className="text-[#f65a27]">com a gente</span>
+            Canais que <span className="text-[#208cf1]">confiam</span> na
+            Inclusive Travel
           </h2>
 
           <p
             data-reveal="up"
             style={{ transitionDelay: "0.2s" }}
-            className="mt-5 text-lg leading-relaxed text-[#111827]/50"
+            className="mt-5 text-base sm:text-lg leading-relaxed text-[#111827]/50"
           >
-            Depoimentos reais de viajantes que viveram a experiência
-            Inclusive Travel.
+            Trabalhamos com criadores de conteúdo e canais que compartilham
+            nossos valores de inclusão e diversidade.
           </p>
         </div>
 
-        {/* ── Testimonials — vibrant cards ── */}
-        <div className="grid gap-4 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <div
-              key={t.name}
-              data-reveal="up-scale"
-              style={{ transitionDelay: `${i * 0.1}s` }}
-              className="group rounded-2xl border border-[#111827]/5 bg-[#faf8f5] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              {/* Stars */}
-              <div className="mb-4 flex gap-0.5">
-                {Array.from({ length: 5 }).map((_, s) => (
-                  <svg key={s} className="h-4 w-4 fill-[#ffa300]" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="mb-6 text-[15px] leading-relaxed text-[#111827]/65">
-                &ldquo;{t.quote}&rdquo;
+        {/* ── Big stat ── */}
+        <div
+          data-reveal="up-scale"
+          className="relative mb-12 sm:mb-16 overflow-hidden rounded-2xl bg-gradient-to-br from-[#003770] to-[#208cf1] p-8 sm:p-12 text-white"
+        >
+          <div className="relative z-10 flex flex-col items-center gap-3 text-center sm:flex-row sm:gap-8 sm:text-left">
+            <span className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight">
+              3M<span className="text-[#ffa300]">+</span>
+            </span>
+            <div>
+              <p className="text-xl sm:text-2xl font-bold">
+                inscritos somados
               </p>
+              <p className="mt-1 text-sm sm:text-base text-white/60">
+                Nossos parceiros alcançam milhões de pessoas com conteúdo
+                autêntico sobre viagem, cultura e diversidade.
+              </p>
+            </div>
+          </div>
+          {/* Decorative circles */}
+          <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/5 hidden sm:block" />
+          <div className="pointer-events-none absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-white/5 hidden sm:block" />
+        </div>
 
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-full ${t.bg} text-sm font-bold text-white`}
-                >
-                  {t.initial}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-[#111827]">{t.name}</p>
-                  <p className="text-xs text-[#111827]/35">{t.trip}</p>
-                </div>
+        {/* ── Main partners grid ── */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+          {mainPartners.map((p, i) => (
+            <div
+              key={p.channel}
+              data-reveal="up-scale"
+              style={{ transitionDelay: `${i * 0.08}s` }}
+              className="group flex flex-col items-center gap-3 rounded-2xl border border-[#111827]/5 bg-[#faf8f5] p-5 sm:p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              {/* Channel logo placeholder */}
+              <div
+                className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-xl text-lg sm:text-xl font-black text-white shadow-md transition-transform duration-300 group-hover:scale-110"
+                style={{ backgroundColor: p.color }}
+              >
+                {p.initial}
+              </div>
+              <div>
+                <p className="text-sm sm:text-base font-bold text-[#111827]">
+                  {p.channel}
+                </p>
+                <p className="mt-0.5 text-xs text-[#111827]/35">
+                  {p.handle}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* ── Guides ── */}
-        <div
-          data-reveal="up"
-          className="mt-16"
-        >
-          <div className="mb-5 flex items-center gap-3">
+        {/* ── Secondary partners ── */}
+        <div data-reveal="up" className="mt-10 sm:mt-14">
+          <div className="mb-4 flex items-center gap-3">
             <span className="rounded-full bg-[#4e9424]/10 px-3 py-1 text-xs font-bold text-[#4e9424]">
-              16 Guias
+              + {secondaryPartners.length} parceiros
             </span>
-            <span className="text-sm text-[#111827]/35">
-              Líderes de viagem especializados em curadoria cultural
+            <span className="text-xs sm:text-sm text-[#111827]/35">
+              E muitos outros criadores incríveis
             </span>
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {guides.map((guide) => (
+            {secondaryPartners.map((name) => (
               <span
-                key={guide}
-                className="rounded-full border border-[#111827]/8 bg-white px-3.5 py-1.5 text-xs font-medium text-[#111827]/50 transition-all duration-200 hover:border-[#208cf1]/30 hover:text-[#208cf1]"
+                key={name}
+                className="rounded-full border border-[#111827]/8 bg-white px-3 sm:px-3.5 py-1.5 text-xs font-medium text-[#111827]/50 transition-all duration-200 hover:border-[#208cf1]/30 hover:text-[#208cf1]"
               >
-                {guide}
+                {name}
               </span>
             ))}
           </div>
