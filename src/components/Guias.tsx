@@ -107,7 +107,7 @@ export default function Guias() {
               className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${p.gradient} transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
             >
               {/* Logo — hero area */}
-              <div className="relative aspect-square overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={p.logo}
                   alt={p.channel}
@@ -141,10 +141,10 @@ export default function Guias() {
               key={o.channel}
               data-reveal="scale"
               style={{ transitionDelay: `${(i % 3) * 0.05}s` }}
-              className="group flex items-center gap-3 sm:gap-4 rounded-xl border border-[#111827]/5 bg-[#faf8f5] p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+              className="group flex items-center gap-4 rounded-xl border border-[#111827]/5 bg-[#faf8f5] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
             >
               {/* Logo */}
-              <div className="relative h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0 overflow-hidden rounded-lg">
+              <div className="relative h-14 w-14 sm:h-16 sm:w-16 flex-shrink-0 overflow-hidden rounded-lg">
                 <Image
                   src={o.logo}
                   alt={o.channel}
