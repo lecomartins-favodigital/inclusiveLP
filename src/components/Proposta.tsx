@@ -123,8 +123,8 @@ export default function Proposta() {
             transition={{ ...spring, delay: 0.25 }}
             className="mt-6 max-w-lg text-lg leading-relaxed text-[#111827]/45"
           >
-            Três etapas simples separam você da viagem mais
-            transformadora da sua vida.
+            Do primeiro contato ao pós-viagem — cuidamos de cada detalhe
+            para que você foque no que importa: liderar.
           </m.p>
         </div>
 
@@ -349,8 +349,8 @@ export default function Proposta() {
             </m.div>
           </div>
 
-          {/* Step 3 — left */}
-          <div className="relative grid items-center gap-6 sm:gap-8 lg:grid-cols-2">
+          {/* Step 3 — left: Vendas */}
+          <div className="relative grid items-center gap-6 pb-16 sm:gap-8 sm:pb-24 lg:grid-cols-2 lg:pb-32">
             <m.div
               className="absolute left-[26px] top-8 z-10 hidden lg:left-1/2 lg:block lg:-translate-x-1/2"
               initial={{ scale: 0 }}
@@ -359,9 +359,9 @@ export default function Proposta() {
               transition={{ ...spring, delay: 0.2 }}
             >
               <span className="relative flex h-5 w-5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2ba2f2] opacity-30" />
-                <span className="relative inline-flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#2ba2f2] bg-[#faf8f5]">
-                  <span className="h-2 w-2 rounded-full bg-[#2ba2f2]" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#4e9424] opacity-30" />
+                <span className="relative inline-flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#4e9424] bg-[#faf8f5]">
+                  <span className="h-2 w-2 rounded-full bg-[#4e9424]" />
                 </span>
               </span>
             </m.div>
@@ -377,8 +377,88 @@ export default function Proposta() {
                 03
               </span>
               <div className="sm:-mt-16 lg:-mt-20">
-                <span className="mb-3 inline-block rounded-full bg-[#2ba2f2]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#2ba2f2]">
+                <span className="mb-3 inline-block rounded-full bg-[#4e9424]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#4e9424]">
                   Etapa 3
+                </span>
+                <h3 className="font-display text-2xl font-bold text-[#111827] sm:text-3xl lg:text-4xl">
+                  Vendas & Comercial
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-[#111827]/45">
+                  Cuidamos de toda a operação comercial: página de vendas,
+                  captação de interessados, gestão de pagamentos e comunicação
+                  com o público. Você foca na liderança, a gente faz o resto.
+                </p>
+              </div>
+            </m.div>
+
+            <m.div
+              initial={{ opacity: 0, x: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ ...spring, delay: 0.25 }}
+              className="relative"
+            >
+              <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-6 shadow-lg shadow-black/[0.04] sm:p-8">
+                <div className="mb-5 flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#4e9424]">Operação</span>
+                  <span className="rounded-full bg-[#4e9424]/10 px-2.5 py-0.5 text-[10px] font-bold text-[#4e9424]">Completa</span>
+                </div>
+                {[
+                  { label: "Página de vendas", status: "Criada", icon: "✓" },
+                  { label: "Captação de leads", status: "Ativa", icon: "✓" },
+                  { label: "Gestão de pagamentos", status: "Automatizada", icon: "✓" },
+                  { label: "Comunicação com grupo", status: "24/7", icon: "✓" },
+                ].map((item, idx) => (
+                  <m.div
+                    key={item.label}
+                    className="flex items-center justify-between border-t border-[#111827]/[0.05] py-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + idx * 0.12 }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#4e9424]/15 text-[10px] font-bold text-[#4e9424]">{item.icon}</span>
+                      <span className="text-sm text-[#111827]/60">{item.label}</span>
+                    </div>
+                    <span className="text-[11px] font-semibold text-[#4e9424]">{item.status}</span>
+                  </m.div>
+                ))}
+              </div>
+            </m.div>
+          </div>
+
+          {/* Step 4 — right: Embarque */}
+          <div className="relative grid items-center gap-6 pb-16 sm:gap-8 sm:pb-24 lg:grid-cols-2 lg:pb-32">
+            <m.div
+              className="absolute left-[26px] top-8 z-10 hidden lg:left-1/2 lg:block lg:-translate-x-1/2"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ ...spring, delay: 0.2 }}
+            >
+              <span className="relative flex h-5 w-5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2ba2f2] opacity-30" />
+                <span className="relative inline-flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#2ba2f2] bg-[#faf8f5]">
+                  <span className="h-2 w-2 rounded-full bg-[#2ba2f2]" />
+                </span>
+              </span>
+            </m.div>
+
+            {/* Text first on mobile, right on desktop */}
+            <m.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...spring, delay: 0.1 }}
+              className="lg:order-2 lg:pl-16"
+            >
+              <span className="hidden font-display font-black leading-none text-[#111827]/[0.04] sm:block sm:text-[120px] lg:text-[160px]">
+                04
+              </span>
+              <div className="sm:-mt-16 lg:-mt-20">
+                <span className="mb-3 inline-block rounded-full bg-[#2ba2f2]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#2ba2f2]">
+                  Etapa 4
                 </span>
                 <h3 className="font-display text-2xl font-bold text-[#111827] sm:text-3xl lg:text-4xl">
                   Embarque
@@ -390,12 +470,13 @@ export default function Proposta() {
               </div>
             </m.div>
 
+            {/* Card second on mobile, left on desktop */}
             <m.div
-              initial={{ opacity: 0, x: 30, scale: 0.95 }}
+              initial={{ opacity: 0, x: -30, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ ...spring, delay: 0.25 }}
-              className="relative"
+              className="relative lg:order-1"
             >
               <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-6 shadow-lg shadow-black/[0.04] sm:p-8">
                 {/* Boarding pass style */}
@@ -445,6 +526,81 @@ export default function Proposta() {
                     ))}
                   </m.div>
                 </div>
+              </div>
+            </m.div>
+          </div>
+
+          {/* Step Bônus — centered, special treatment */}
+          <div className="relative grid items-center gap-6 sm:gap-8 lg:grid-cols-2">
+            <m.div
+              className="absolute left-[26px] top-8 z-10 hidden lg:left-1/2 lg:block lg:-translate-x-1/2"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ ...spring, delay: 0.2 }}
+            >
+              <span className="relative flex h-5 w-5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ffa300] opacity-30" />
+                <span className="relative inline-flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#ffa300] bg-[#faf8f5]">
+                  <span className="h-2 w-2 rounded-full bg-[#ffa300]" />
+                </span>
+              </span>
+            </m.div>
+
+            <m.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...spring, delay: 0.1 }}
+              className="lg:pr-16 lg:text-right"
+            >
+              <span className="hidden font-display font-black leading-none text-[#ffa300]/[0.08] sm:block sm:text-[100px] lg:text-[130px]">
+                ★
+              </span>
+              <div className="sm:-mt-12 lg:-mt-16">
+                <span className="mb-3 inline-block rounded-full bg-gradient-to-r from-[#ffa300]/15 to-[#f65a27]/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#ffa300]">
+                  Bônus
+                </span>
+                <h3 className="font-display text-2xl font-bold text-[#111827] sm:text-3xl lg:text-4xl">
+                  Cuidado Exclusivo
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-[#111827]/45">
+                  Cada viajante é tratado de forma individual. Atendimento humanizado,
+                  acompanhamento pessoal e atenção aos detalhes que fazem a diferença
+                  — do embarque até a volta pra casa.
+                </p>
+              </div>
+            </m.div>
+
+            <m.div
+              initial={{ opacity: 0, x: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ ...spring, delay: 0.25 }}
+              className="relative"
+            >
+              <div className="overflow-hidden rounded-2xl border-2 border-[#ffa300]/20 bg-gradient-to-br from-[#ffa300]/[0.04] to-[#f65a27]/[0.04] p-6 shadow-lg shadow-[#ffa300]/[0.06] sm:p-8">
+                <div className="mb-5 text-center">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#ffa300]">Nosso Diferencial</span>
+                </div>
+                {[
+                  { text: "Atendimento humanizado e personalizado para cada viajante", icon: "♥" },
+                  { text: "Acompanhamento pré, durante e pós-viagem", icon: "◈" },
+                  { text: "Canal direto com a equipe — sem robôs, sem filas", icon: "◉" },
+                  { text: "Cuidado com restrições alimentares, mobilidade e necessidades especiais", icon: "✦" },
+                ].map((item, idx) => (
+                  <m.div
+                    key={item.text}
+                    className="flex items-start gap-3 border-t border-[#ffa300]/10 py-3.5"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + idx * 0.12 }}
+                  >
+                    <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#ffa300]/15 text-[10px] text-[#ffa300]">{item.icon}</span>
+                    <span className="text-sm leading-relaxed text-[#111827]/55">{item.text}</span>
+                  </m.div>
+                ))}
               </div>
             </m.div>
           </div>
