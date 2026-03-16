@@ -41,10 +41,10 @@ export default function Proposta() {
     <section
       ref={sectionRef}
       id="como-funciona"
-      className="relative overflow-hidden bg-[#faf8f5] py-32 lg:py-44"
+      className="relative overflow-hidden bg-[#faf8f5] py-20 sm:py-32 lg:py-44"
     >
-      {/* ── Grid background ── */}
-      <div className="pointer-events-none absolute inset-0">
+      {/* ── Grid background — hidden on mobile ── */}
+      <div className="pointer-events-none absolute inset-0 hidden sm:block">
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
@@ -61,9 +61,9 @@ export default function Proposta() {
         />
       </div>
 
-      {/* ── Moving gradient orbs ── */}
+      {/* ── Moving gradient orbs — hidden on mobile ── */}
       <m.div
-        className="pointer-events-none absolute left-[10%] top-[15%] h-[500px] w-[500px] rounded-full"
+        className="pointer-events-none absolute left-[10%] top-[15%] hidden h-[500px] w-[500px] rounded-full sm:block"
         style={{
           background: "radial-gradient(circle, rgba(246,90,39,0.07) 0%, transparent 60%)",
           filter: "blur(100px)",
@@ -72,7 +72,7 @@ export default function Proposta() {
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" as const }}
       />
       <m.div
-        className="pointer-events-none absolute bottom-[10%] right-[5%] h-[400px] w-[400px] rounded-full"
+        className="pointer-events-none absolute bottom-[10%] right-[5%] hidden h-[400px] w-[400px] rounded-full sm:block"
         style={{
           background: "radial-gradient(circle, rgba(32,140,241,0.06) 0%, transparent 60%)",
           filter: "blur(80px)",
@@ -83,7 +83,7 @@ export default function Proposta() {
 
       <div className="relative mx-auto max-w-6xl px-6">
         {/* ── Header ── */}
-        <div className="mb-28 lg:mb-36">
+        <div className="mb-16 sm:mb-28 lg:mb-36">
           <m.span
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: "auto" }}
@@ -99,7 +99,7 @@ export default function Proposta() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ ...spring, delay: 0.1 }}
-            className="max-w-3xl font-display text-5xl font-bold leading-[1.1] text-[#111827] lg:text-7xl"
+            className="max-w-3xl font-display text-3xl font-bold leading-[1.1] text-[#111827] sm:text-5xl lg:text-7xl"
           >
             Do sonho ao{" "}
             <span className="relative inline-block">
@@ -164,7 +164,7 @@ export default function Proposta() {
           </div>
 
           {/* Step 1 — left */}
-          <div className="relative grid items-center gap-8 pb-24 lg:grid-cols-2 lg:pb-32">
+          <div className="relative grid items-center gap-6 pb-16 sm:gap-8 sm:pb-24 lg:grid-cols-2 lg:pb-32">
             <m.div
               className="absolute left-[26px] top-8 z-10 hidden lg:left-1/2 lg:block lg:-translate-x-1/2"
               initial={{ scale: 0 }}
@@ -181,20 +181,20 @@ export default function Proposta() {
             </m.div>
 
             <m.div
-              initial={{ opacity: 0, x: -60 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ ...spring, delay: 0.1 }}
               className="lg:pr-16 lg:text-right"
             >
-              <span className="font-display text-[120px] font-black leading-none text-[#111827]/[0.04] lg:text-[160px]">
+              <span className="hidden font-display font-black leading-none text-[#111827]/[0.04] sm:block sm:text-[120px] lg:text-[160px]">
                 01
               </span>
-              <div className="-mt-16 lg:-mt-20">
+              <div className="sm:-mt-16 lg:-mt-20">
                 <span className="mb-3 inline-block rounded-full bg-[#208cf1]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#208cf1]">
                   Etapa 1
                 </span>
-                <h3 className="font-display text-3xl font-bold text-[#111827] lg:text-4xl">
+                <h3 className="font-display text-2xl font-bold text-[#111827] sm:text-3xl lg:text-4xl">
                   Contato
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-[#111827]/45">
@@ -205,13 +205,13 @@ export default function Proposta() {
             </m.div>
 
             <m.div
-              initial={{ opacity: 0, x: 60, scale: 0.9 }}
+              initial={{ opacity: 0, x: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ ...spring, delay: 0.25 }}
               className="relative"
             >
-              <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-8 shadow-lg shadow-black/[0.04]">
+              <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-6 shadow-lg shadow-black/[0.04] sm:p-8">
                 <div className="mb-4 flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
                   <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
@@ -264,8 +264,8 @@ export default function Proposta() {
             </m.div>
           </div>
 
-          {/* Step 2 — right (reversed) */}
-          <div className="relative grid items-center gap-8 pb-24 lg:grid-cols-2 lg:pb-32">
+          {/* Step 2 — right (reversed on desktop, normal stack on mobile) */}
+          <div className="relative grid items-center gap-6 pb-16 sm:gap-8 sm:pb-24 lg:grid-cols-2 lg:pb-32">
             <m.div
               className="absolute left-[26px] top-8 z-10 hidden lg:left-1/2 lg:block lg:-translate-x-1/2"
               initial={{ scale: 0 }}
@@ -281,14 +281,40 @@ export default function Proposta() {
               </span>
             </m.div>
 
+            {/* Text — DOM first (mobile: text on top), desktop: pushed to right */}
             <m.div
-              initial={{ opacity: 0, x: -60, scale: 0.9 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...spring, delay: 0.1 }}
+              className="lg:order-2 lg:pl-16"
+            >
+              <span className="hidden font-display font-black leading-none text-[#111827]/[0.04] sm:block sm:text-[120px] lg:text-[160px]">
+                02
+              </span>
+              <div className="sm:-mt-16 lg:-mt-20">
+                <span className="mb-3 inline-block rounded-full bg-[#f65a27]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#f65a27]">
+                  Etapa 2
+                </span>
+                <h3 className="font-display text-2xl font-bold text-[#111827] sm:text-3xl lg:text-4xl">
+                  Planejamento
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-[#111827]/45">
+                  Nossa equipe monta o roteiro personalizado com todos os detalhes:
+                  hospedagem, guias especializados, experiências culturais e logística completa.
+                </p>
+              </div>
+            </m.div>
+
+            {/* Card — DOM second (mobile: card below text), desktop: pushed to left */}
+            <m.div
+              initial={{ opacity: 0, x: -30, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ ...spring, delay: 0.25 }}
               className="relative lg:order-1"
             >
-              <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-8 shadow-lg shadow-black/[0.04]">
+              <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-6 shadow-lg shadow-black/[0.04] sm:p-8">
                 <div className="mb-5 flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#f65a27]">Roteiro</span>
                   <span className="rounded-full bg-[#f65a27]/10 px-2.5 py-0.5 text-[10px] font-bold text-[#f65a27]">Personalizado</span>
@@ -321,34 +347,10 @@ export default function Proposta() {
                 ))}
               </div>
             </m.div>
-
-            <m.div
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ ...spring, delay: 0.1 }}
-              className="lg:order-2 lg:pl-16"
-            >
-              <span className="font-display text-[120px] font-black leading-none text-[#111827]/[0.04] lg:text-[160px]">
-                02
-              </span>
-              <div className="-mt-16 lg:-mt-20">
-                <span className="mb-3 inline-block rounded-full bg-[#f65a27]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#f65a27]">
-                  Etapa 2
-                </span>
-                <h3 className="font-display text-3xl font-bold text-[#111827] lg:text-4xl">
-                  Planejamento
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-[#111827]/45">
-                  Nossa equipe monta o roteiro personalizado com todos os detalhes:
-                  hospedagem, guias especializados, experiências culturais e logística completa.
-                </p>
-              </div>
-            </m.div>
           </div>
 
           {/* Step 3 — left */}
-          <div className="relative grid items-center gap-8 lg:grid-cols-2">
+          <div className="relative grid items-center gap-6 sm:gap-8 lg:grid-cols-2">
             <m.div
               className="absolute left-[26px] top-8 z-10 hidden lg:left-1/2 lg:block lg:-translate-x-1/2"
               initial={{ scale: 0 }}
@@ -365,20 +367,20 @@ export default function Proposta() {
             </m.div>
 
             <m.div
-              initial={{ opacity: 0, x: -60 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ ...spring, delay: 0.1 }}
               className="lg:pr-16 lg:text-right"
             >
-              <span className="font-display text-[120px] font-black leading-none text-[#111827]/[0.04] lg:text-[160px]">
+              <span className="hidden font-display font-black leading-none text-[#111827]/[0.04] sm:block sm:text-[120px] lg:text-[160px]">
                 03
               </span>
-              <div className="-mt-16 lg:-mt-20">
+              <div className="sm:-mt-16 lg:-mt-20">
                 <span className="mb-3 inline-block rounded-full bg-[#2ba2f2]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#2ba2f2]">
                   Etapa 3
                 </span>
-                <h3 className="font-display text-3xl font-bold text-[#111827] lg:text-4xl">
+                <h3 className="font-display text-2xl font-bold text-[#111827] sm:text-3xl lg:text-4xl">
                   Embarque
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-[#111827]/45">
@@ -389,13 +391,13 @@ export default function Proposta() {
             </m.div>
 
             <m.div
-              initial={{ opacity: 0, x: 60, scale: 0.9 }}
+              initial={{ opacity: 0, x: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ ...spring, delay: 0.25 }}
               className="relative"
             >
-              <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-8 shadow-lg shadow-black/[0.04]">
+              <div className="overflow-hidden rounded-2xl border border-[#111827]/[0.06] bg-white p-6 shadow-lg shadow-black/[0.04] sm:p-8">
                 {/* Boarding pass style */}
                 <div className="mb-6 flex items-center justify-between border-b border-dashed border-[#111827]/10 pb-5">
                   <div>
@@ -454,9 +456,9 @@ export default function Proposta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ ...spring }}
-          className="mt-32 overflow-hidden rounded-3xl bg-gradient-to-br from-[#111827] to-[#1a2332] lg:mt-40"
+          className="mt-20 overflow-hidden rounded-2xl bg-gradient-to-br from-[#111827] to-[#1a2332] sm:mt-32 sm:rounded-3xl lg:mt-40"
         >
-          <div className="p-10 pb-0 text-center lg:p-14 lg:pb-0">
+          <div className="p-6 pb-0 text-center sm:p-10 sm:pb-0 lg:p-14 lg:pb-0">
             <span className="mb-4 inline-block text-xs font-bold uppercase tracking-[0.3em] text-[#f65a27]">
               Incluso em cada viagem
             </span>
@@ -496,7 +498,7 @@ export default function Proposta() {
           </div>
 
           {/* Stats bar */}
-          <div className="flex flex-wrap items-center justify-center gap-10 border-t border-white/[0.06] px-10 py-10">
+          <div className="grid grid-cols-2 gap-6 border-t border-white/[0.06] px-6 py-8 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-10 sm:px-10 sm:py-10">
             {[
               { n: 1000, suffix: "+", label: "Viajantes atendidos" },
               { n: 16, suffix: "", label: "Guias especializados" },

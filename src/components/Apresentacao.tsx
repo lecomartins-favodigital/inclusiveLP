@@ -70,9 +70,9 @@ const pillars = [
 
 export default function Apresentacao() {
   return (
-    <section id="apresentacao" className="relative overflow-hidden bg-[#111827] py-28 lg:py-36">
-      {/* Colored gradient blobs */}
-      <div className="pointer-events-none absolute inset-0">
+    <section id="apresentacao" className="relative overflow-hidden bg-[#111827] py-16 sm:py-28 lg:py-36">
+      {/* Colored gradient blobs — hidden on mobile for performance */}
+      <div className="pointer-events-none absolute inset-0 hidden sm:block">
         <div
           className="absolute -left-[15%] top-[-10%] h-[60%] w-[50%] rounded-full"
           style={{
@@ -87,23 +87,7 @@ export default function Apresentacao() {
             filter: "blur(70px)",
           }}
         />
-        <div
-          className="absolute right-[20%] top-[40%] h-[40%] w-[30%] rounded-full"
-          style={{
-            background: "radial-gradient(ellipse at center, rgba(43,162,242,0.15) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
       </div>
-
-      {/* Dot grid */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
 
       <div className="relative mx-auto max-w-6xl px-6">
         {/* ── Header ── */}

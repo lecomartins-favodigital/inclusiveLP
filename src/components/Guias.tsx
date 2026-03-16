@@ -50,7 +50,7 @@ const others = [
 
 export default function Guias() {
   return (
-    <section id="clientes-destaque" className="bg-white py-24 lg:py-32">
+    <section id="clientes-destaque" className="bg-white py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-6xl px-6">
         {/* ── Header ── */}
         <div className="mb-14 max-w-2xl">
@@ -67,7 +67,7 @@ export default function Guias() {
           <h2
             data-reveal="up"
             style={{ transitionDelay: "0.1s" }}
-            className="font-display text-4xl font-bold leading-tight text-[#111827] lg:text-5xl"
+            className="font-display text-3xl font-bold leading-tight text-[#111827] sm:text-4xl lg:text-5xl"
           >
             Criadores que já{" "}
             <span className="text-[#f65a27]">embarcaram</span>

@@ -5,19 +5,19 @@ const WHATSAPP_URL =
 
 export default function CtaFinal() {
   return (
-    <section id="contato" className="relative overflow-hidden bg-gradient-to-br from-[#208cf1] via-[#1f8de8] to-[#2ba2f2] py-28 lg:py-36">
-      {/* Dot pattern */}
+    <section id="contato" className="relative overflow-hidden bg-gradient-to-br from-[#208cf1] via-[#1f8de8] to-[#2ba2f2] py-16 sm:py-28 lg:py-36">
+      {/* Dot pattern — hidden on mobile */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 hidden opacity-[0.06] sm:block"
         style={{
           backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
       />
 
-      {/* Warm blob — CSS animation */}
+      {/* Warm blobs — hidden on mobile for performance */}
       <div
-        className="pointer-events-none absolute -right-[10%] bottom-[-15%] h-[60%] w-[45%] rounded-full"
+        className="pointer-events-none absolute -right-[10%] bottom-[-15%] hidden h-[60%] w-[45%] rounded-full sm:block"
         style={{
           background: "radial-gradient(ellipse at center, rgba(246,90,39,0.2) 0%, transparent 60%)",
           filter: "blur(80px)",
@@ -25,7 +25,7 @@ export default function CtaFinal() {
         }}
       />
       <div
-        className="pointer-events-none absolute -left-[8%] top-[10%] h-[50%] w-[35%] rounded-full"
+        className="pointer-events-none absolute -left-[8%] top-[10%] hidden h-[50%] w-[35%] rounded-full sm:block"
         style={{
           background: "radial-gradient(ellipse at center, rgba(255,163,0,0.12) 0%, transparent 60%)",
           filter: "blur(70px)",
@@ -50,7 +50,7 @@ export default function CtaFinal() {
             <h2
               data-reveal="up"
               style={{ transitionDelay: "0.05s" }}
-              className="font-display text-4xl font-bold leading-tight text-white lg:text-5xl"
+              className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl"
             >
               Vamos criar sua
               <br />
@@ -95,7 +95,7 @@ export default function CtaFinal() {
           <div
             data-reveal="up-scale"
             style={{ transitionDelay: "0.15s" }}
-            className="rounded-2xl border border-white/15 bg-white/10 p-8 backdrop-blur-xl"
+            className="rounded-2xl border border-white/15 bg-white/15 p-8 sm:bg-white/10 sm:backdrop-blur-xl"
           >
             <p className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50">
               <span className="h-px w-5 bg-white/30" />

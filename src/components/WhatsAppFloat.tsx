@@ -32,8 +32,8 @@ export default function WhatsAppFloat() {
         pointerEvents: visible ? "auto" : "none",
       }}
     >
-      {/* Pulse ring */}
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-40" />
+      {/* Pulse ring — only on desktop for performance */}
+      <span className="absolute hidden h-full w-full animate-ping rounded-full bg-green-400 opacity-40 sm:inline-flex" />
 
       {/* WhatsApp icon */}
       <svg

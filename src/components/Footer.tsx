@@ -4,7 +4,7 @@ export default function Footer() {
       {/* Subtle top gradient line */}
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-[#208cf1]/20 to-transparent" />
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* Top row — logo + nav */}
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           {/* Brand */}
@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex gap-16">
+          <div className="flex gap-10 sm:gap-16">
             <div>
               <span className="mb-3 block text-[11px] font-bold uppercase tracking-wider text-white/20">
                 Navegação

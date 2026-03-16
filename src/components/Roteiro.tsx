@@ -45,10 +45,10 @@ const destinations = [
 
 export default function Roteiro() {
   return (
-    <section id="roteiro" className="relative overflow-hidden bg-gradient-to-b from-[#f65a27] to-[#f7682b] py-24 lg:py-32">
-      {/* Subtle warm glow */}
+    <section id="roteiro" className="relative overflow-hidden bg-gradient-to-b from-[#f65a27] to-[#f7682b] py-16 sm:py-24 lg:py-32">
+      {/* Subtle warm glow — hidden on mobile */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[60%] w-[80%] -translate-x-1/2 rounded-full"
+        className="pointer-events-none absolute left-1/2 top-0 hidden h-[60%] w-[80%] -translate-x-1/2 rounded-full sm:block"
         style={{
           background: "radial-gradient(ellipse at center, rgba(255,200,100,0.15) 0%, transparent 70%)",
           filter: "blur(60px)",
@@ -68,7 +68,7 @@ export default function Roteiro() {
           <h2
             data-reveal="up"
             style={{ transitionDelay: "0.1s" }}
-            className="font-display text-4xl font-bold leading-tight text-white lg:text-6xl"
+            className="font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-6xl"
           >
             O mundo inteiro como
             <br />
@@ -119,7 +119,7 @@ export default function Roteiro() {
 
         {/* ── Bottom row (3) — centered ── */}
         <div className="mt-4 flex justify-center">
-          <div className="grid w-full max-w-[calc(75%-0.5rem)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:max-w-[calc(75%-0.5rem)] lg:grid-cols-3">
             {destinations.slice(4).map((dest, i) => (
               <div
                 key={dest.name}
