@@ -29,7 +29,7 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {[
                   { label: "Quem Somos", id: "apresentacao" },
-                  { label: "Clientes", id: "clientes-destaque" },
+                  { label: "Parceiros", id: "clientes-destaque" },
                   { label: "Destinos", id: "roteiro" },
                   { label: "Como Funciona", id: "como-funciona" },
                 ].map((link) => (

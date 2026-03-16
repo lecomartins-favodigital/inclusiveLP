@@ -60,7 +60,7 @@ export default function Guias() {
           >
             <span className="h-px flex-1 max-w-[60px] bg-[#4e9424]" />
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#4e9424]">
-              Nossos Clientes
+              Nossos Parceiros
             </span>
           </div>
 
@@ -69,7 +69,7 @@ export default function Guias() {
             style={{ transitionDelay: "0.1s" }}
             className="font-display text-3xl font-bold leading-tight text-[#111827] sm:text-4xl lg:text-5xl"
           >
-            Criadores que já{" "}
+            Parceiros que já{" "}
             <span className="text-[#f65a27]">embarcaram</span>
           </h2>
 

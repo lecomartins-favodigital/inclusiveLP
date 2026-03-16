@@ -6,7 +6,7 @@ import { m, AnimatePresence } from "framer-motion";
 const sections = [
   { id: "hero", label: "Início" },
   { id: "apresentacao", label: "Quem Somos" },
-  { id: "clientes-destaque", label: "Clientes" },
+  { id: "clientes-destaque", label: "Parceiros" },
   { id: "roteiro", label: "Destinos" },
   { id: "como-funciona", label: "Como Funciona" },
   { id: "contato", label: "Contato" },
